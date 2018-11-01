@@ -1,7 +1,8 @@
 {
-  "name": "apigum",
-  "version": "1.0.0",
-  "description": "",
+  "name": "apigum-sdk",
+  "version": "1.0.1",
+  "keywords": ["api integration", "api", "integrations", "Synchronization", "SendGrid", "Freshdesk", "Stripe", "Capsule Crm", "Zoho Invoice", "2Checkout", "Pipedrive", "toggl", "Authorize.Net", "PayPal", "Shopify"],
+  "description": "apigum is npm library for managing integrations between popular cloud applications like Twilio, SendGrid, Shopify and others.",
   "main": "index.js",
   "scripts": {
     "test": "node ./tests/index.js"

@@ -1,9 +1,12 @@
-# ApiGum
+# apigum-sdk
+[![Build Status](https://api.travis-ci.org/pomeo/node-apigum-sdk.png)](http://travis-ci.org/pomeo/node-billiving)
+[![Dependencies](https://david-dm.org/pomeo/node-apigum-sdk.png)](https://david-dm.org/pomeo/node-apigum-sdk)
+[![NPM version](https://badge.fury.io/js/apigum-sdk.svg)](http://badge.fury.io/js/apigum-sdk)
 
-ApiGum SDK is npm library for managing integrations between popular cloud applications like Twilio, SendGrid, Shopify and others.
+apigum-sdk is npm library for managing integrations between popular cloud applications like Twilio, SendGrid, Shopify and others.
 ## Installation
 
-- <TODO>
+- npm install apigum-sdk
 
 ## Usage
 
