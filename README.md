@@ -16,7 +16,7 @@ apigum-sdk is npm library for managing integrations between popular cloud applic
  - This SDK includes a current snapshot of [supported integrations](https://github.com/apigum/apigum.sdk.npm/blob/master/generation/index.js). This of course can be overriden by picking up new integration ids @ apigum.com.
 
 ### Import Module
-```
+```js
   // Import a module
   const {Integration, Apps, AppHelper} = require('apigum-sdk')
 ```
@@ -50,6 +50,7 @@ apigum-sdk is npm library for managing integrations between popular cloud applic
       .then(id => {
           // returns id of created integration
       })
+      .catch(err => console.log(err));
 
   //You may clone other integrations on apigum.com by using the id (last part) in the URL:
   //e.g.: https://www.apigum.com/Integrations/{integration-id}
