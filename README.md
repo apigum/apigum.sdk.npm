@@ -1,16 +1,16 @@
 # ApiGum
 
-ApiGum SDK is a library for managing integrations between popular cloud applications like Twilio, SendGrid, Shopify and others.
+ApiGum SDK is npm library for managing integrations between popular cloud applications like Twilio, SendGrid, Shopify and others.
 ## Installation
 
-- Will be available after upload to npm
+- <TODO>
 
 ## Usage
 
  - Log into your [apigum.com](apigum.com) account to obtain your API Key.  
  - You'll also need to obtain the relevant application keys. For example secret key for Stripe or Subdomain and Api Key for Freshdesk.
  - This library makes calls to the [apigum REST API](https://api.apigum.com/help).
- - This SDK includes a current snapshot of [supported integrations](TODO/link). This of course can be overriden by picking up new integration ids @ apigum.com.
+ - This SDK includes a current snapshot of [supported integrations](https://github.com/apigum/apigum.sdk.npm/blob/master/generation/index.js). This of course can be overriden by picking up new integration ids @ apigum.com.
 
 ### Setup
 ```js
@@ -18,14 +18,14 @@ ApiGum SDK is a library for managing integrations between popular cloud applicat
   this.stripeCredentials = {}
 
   //set up credentials
-  this.freshdeskCredentials[Apps.Freshdesk.Keys.API_KEY] = "your Freshdesk api key"
-  this.freshdeskCredentials[Apps.Freshdesk.Keys.SUB_DOMAIN] = "your Freshdesk subdomain"
+  this.freshdeskCredentials[Apps.Freshdesk.Keys.API_KEY] = "<your Freshdesk api key>"
+  this.freshdeskCredentials[Apps.Freshdesk.Keys.SUB_DOMAIN] = "<your Freshdesk subdomain>"
 
   //set up credentials
-  this.stripeCredentials[Apps.Stripe.Keys.SECRET_KEY] = "your Stripe secret key"
+  this.stripeCredentials[Apps.Stripe.Keys.SECRET_KEY] = "<your Stripe secret key>"
 
   //obtain api key at https://account.apigum.com/api
-  const apiKey = "Your API key"
+  const apiKey = "<Your API key>"
   this.integration = new Integration(apiKey);
 ```
 
@@ -35,7 +35,7 @@ ApiGum SDK is a library for managing integrations between popular cloud applicat
   const freshdesk = AppHelper.configure(Apps.Freshdesk.AppId, this.freshdeskCredentials);
   const stripe = AppHelper.configure(Apps.Stripe.AppId, this.stripeCredentials);
 
-  const integrationID = await this.integration.create(freshdesk, stripe,
+  const integrationId = await this.integration.create(freshdesk, stripe,
       Apps.Freshdesk.Integrations.CREATE_FRESHDESK_CONTACT_FOR_NEW_STRIPE_CUSTOMERS);
 
   //You may clone other integrations on apigum.com by using the id (last part) in the URL:
@@ -47,7 +47,7 @@ ApiGum SDK is a library for managing integrations between popular cloud applicat
 ```js
     const script = fs.readFileSync(path.resolve(__dirname, "./integration.js"), "utf8");
     
-    await this.integration.updateScript(integrationID , script);          
+    await this.integration.updateScript(integrationId , script);          
 ```
 
 #### Sample integration.js
@@ -88,20 +88,20 @@ ApiGum SDK is a library for managing integrations between popular cloud applicat
 
 ### Delete Integration
 ```js
-  await this.integration.delete(integrationID);
+  await this.integration.delete(integrationId);
 ```
 
 ### Start Running
 ```js
   //by default integrations start running when created
   //this method may be used if integration has been stopped.
-  await this.integration.publish(integrationID);
+  await this.integration.publish(integrationId);
 ```
 
 ### Stop Running
 ```js
   //suspends integration data synchronization
-  await this.integration.unpublish(integrationID);
+  await this.integration.unpublish(integrationId);
 ```
 
 For product information please visit our site at https://www.apigum.com
